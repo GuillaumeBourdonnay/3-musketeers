@@ -10,7 +10,7 @@ const cash = require('./cash.js');
 const config = new Conf();
 const argv = process.argv.slice(2);
 
-const {DEFAULT_TO_CURRENCIES} = require('./constants');
+const {DEFAULT_TO_CURRENCIES} = require('./constants'); //API for exhange rates between currencies
 
 const cli = meow(`
 	Usage
@@ -24,7 +24,7 @@ const cli = meow(`
 `);
 
 if (argv.indexOf('--save') !== -1 || argv.indexOf('-s') !== -1) {
-	config.set('defaultFrom', argv[1] || config.get('defaultFrom', 'USD'));
+	config.set('defaultFrom', argv[1] || config.get('defaultFrom', 'USD')); //Value after 'defaultFrom' indicates which is the base currency to compare to other currencies
 	config.set('defaultTo', (argv.length > 2) ? process.argv.slice(4) : config.get('defaultTo', DEFAULT_TO_CURRENCIES));
 	console.log(chalk.green('Saved default currencies to ' + config.path));
 	process.exit(0);
