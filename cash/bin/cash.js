@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use strict';
 
 const got = require('got');
@@ -52,7 +51,6 @@ const cash = async command => { //Asynch command to wait each time for the resul
 };
 
 module.exports = cash; //print using the module.exports Node command
-=======
 'use strict';
 
 const got = require('got');
@@ -106,4 +104,3 @@ const cash = async command => {
 };
 
 module.exports = cash; //print using the module.exports Node command
->>>>>>> 8a5c11daf7a59137cf908d64e050bf54bf5bf100
