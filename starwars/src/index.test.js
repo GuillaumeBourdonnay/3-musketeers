@@ -27,8 +27,13 @@ describe('starwars-names', () => {
       // throw new Error('test not yet defined... remove the throw and write your test here');
     });
 
+function getRandom (min, max){
+  return Math.floor((Math.random() * max) + min);
+}
+
     test('should return an array of random items if passed a number', () => {
-      expect(starWars.all).toContain(expect.arrayContaining(starWars.random(1)));
+      var rand = getRandom(0,starWars.length)
+      expect(starWars.all).toEqual(expect.arrayContaining(starWars.random(rand)));
     });
   });
 });
